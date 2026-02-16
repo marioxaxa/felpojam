@@ -23,3 +23,10 @@ Para garantir a compatibilidade entre diferentes sistemas operacionais (Windows/
 * **Constantes:** `SCREAMING_SNAKE_CASE` (ex: `const MAX_SPEED = 300.0`).
 
 ---
+
+## 🌿 Estratégia de Git
+
+- **main**: Versões estáveis e prontas para export.
+- **dev**: Versão de desenvolvimento a ser subida pra dev.
+- **feat/**: Branches temporárias para novas mecânicas ou assets.
+- **fix/**: Correções rápidas de bugs.
