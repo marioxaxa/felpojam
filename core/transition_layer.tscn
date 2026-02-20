@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://dpsk6l1p8a5q6"]
+
+[ext_resource type="Script" uid="uid://btqkjvlh47imb" path="res://core/transition_layer.gd" id="1_ffw2a"]
+
+[sub_resource type="Animation" id="Animation_c6w8p"]
+resource_name = "fade_to_normal"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_h1yri"]
+resource_name = "fade_to_white"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_y7f8d"]
+_data = {
+&"fade_to_normal": SubResource("Animation_c6w8p"),
+&"fade_to_white": SubResource("Animation_h1yri")
+}
+
+[node name="TransitionLayer" type="CanvasLayer" unique_id=1962028237]
+layer = 128
+script = ExtResource("1_ffw2a")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2074782922]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 1, 1, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2040005156]
+libraries/ = SubResource("AnimationLibrary_y7f8d")
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

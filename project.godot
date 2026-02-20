@@ -15,6 +15,14 @@ run/main_scene="uid://b6tswpbbuby8w"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+TransitionLayer="*res://core/transition_layer.tscn"
+
+[global_group]
+
+player=""
+
 [input]
 
 up={
