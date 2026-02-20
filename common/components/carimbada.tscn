@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://dbs1lpefs45cd"]
+
+[ext_resource type="Script" uid="uid://dbgxdsx6gojk0" path="res://common/components/carimbada.gd" id="1_17gkp"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8tlb0"]
+
+[node name="Carimbada" type="Node3D" unique_id=1316737588]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+script = ExtResource("1_17gkp")
+
+[node name="AreaDetector" type="Area3D" parent="." unique_id=1150638520]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AreaDetector" unique_id=1470804259]
+shape = SubResource("BoxShape3D_8tlb0")
+
+[node name="Decal" type="Decal" parent="." unique_id=800279954]
+size = Vector3(1, 1, 1)
+upper_fade = 0.0
+lower_fade = 0.0
+
+[node name="SubViewport" type="SubViewport" parent="." unique_id=1856872168]
+transparent_bg = true
+size = Vector2i(256, 256)
+
+[node name="ColorRect" type="ColorRect" parent="SubViewport" unique_id=1617610914]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 0.20999998, 0.20999998, 0.7882353)
+
+[node name="Label" type="Label" parent="SubViewport" unique_id=2081313920]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -28.0
+offset_top = -14.0
+offset_right = 28.0
+offset_bottom = 14.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_stretch_ratio = 0.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "teste"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true

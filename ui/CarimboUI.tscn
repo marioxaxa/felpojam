@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://bp33i4txw7e5l"]
+
+[ext_resource type="Script" uid="uid://s5e6dyg503ec" path="res://ui/carimbo_ui.gd" id="1_5w2dm"]
+[ext_resource type="StyleBox" uid="uid://br6xf8r4yjnmv" path="res://common/themes/CarimboUiStyle.tres" id="2_bfii6"]
+
+[node name="CarimboUi" type="CanvasLayer" unique_id=1026707356]
+script = ExtResource("1_5w2dm")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2031219413]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.5882353)
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1954105709]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="CenterContainer" unique_id=759056799]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("2_bfii6")
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/Panel" unique_id=172710042]
+layout_mode = 0
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 116.0
+offset_bottom = 73.0
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/Panel/MarginContainer" unique_id=696626904]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/Panel/MarginContainer/VBoxContainer" unique_id=1961254229]
+layout_mode = 2
+text = "Escreva aqui"
+horizontal_alignment = 1
+
+[node name="TextoInput" type="LineEdit" parent="CenterContainer/Panel/MarginContainer/VBoxContainer" unique_id=1978409790]
+layout_mode = 2
+placeholder_text = "Escreva..."
+alignment = 1
+max_length = 15
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/Panel/MarginContainer/VBoxContainer" unique_id=1844149568]
+layout_mode = 2
+
+[node name="BotaoCancelar" type="Button" parent="CenterContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=962995243]
+layout_mode = 2
+text = "Cancelar"
+
+[node name="BotaoSalvar" type="Button" parent="CenterContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=945819711]
+layout_mode = 2
+text = "Salvar"
+
+[connection signal="pressed" from="CenterContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer/BotaoCancelar" to="." method="_on_botao_cancelar_pressed"]
+[connection signal="pressed" from="CenterContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer/BotaoSalvar" to="." method="_on_botao_salvar_pressed"]
