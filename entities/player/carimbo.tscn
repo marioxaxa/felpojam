@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://bse6n8xvqswh0"]
+
+[ext_resource type="ArrayMesh" uid="uid://b3rg40vig2xyv" path="res://assets/3d/carimboinfantil.obj" id="1_1p2u0"]
+[ext_resource type="Texture2D" uid="uid://dymrc3lyq1si8" path="res://icon.svg" id="2_j3rwc"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bqtr7"]
+size = Vector3(3.185791, 4.855713, 3.043213)
+
+[node name="Carimbo" type="MeshInstance3D" unique_id=1210497114]
+transform = Transform3D(0.082, 0, 0, 0, 0.025767762, 0.07784615, 0, -0.07784615, 0.025767762, 0, 0, 0)
+mesh = ExtResource("1_1p2u0")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1237225424]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1620880438]
+transform = Transform3D(1.000001, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, 0.1456294, 0.5072017, 0.028687)
+shape = SubResource("BoxShape3D_bqtr7")
+disabled = true
+
+[node name="Decal" type="Decal" parent="." unique_id=200582680]
+size = Vector3(1, 1, 1)
+texture_albedo = ExtResource("2_j3rwc")

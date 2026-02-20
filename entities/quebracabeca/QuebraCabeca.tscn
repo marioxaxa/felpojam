@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://bp6v17sglh8uu"]
+
+[ext_resource type="Script" uid="uid://ca55xtskovx4c" path="res://entities/quebracabeca/quebra_cabeca.gd" id="1_c1lk4"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qp0rc"]
+
+[node name="QuebraCabeca" type="Area3D" unique_id=853820493]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("1_c1lk4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1703363610]
+shape = SubResource("BoxShape3D_qp0rc")
