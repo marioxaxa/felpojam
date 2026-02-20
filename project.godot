@@ -19,6 +19,12 @@ config/icon="res://icon.svg"
 
 SaveLoad="*uid://nefiban5xkjs"
 
+TransitionLayer="*res://core/transition_layer.tscn"
+
+[global_group]
+
+player=""
+
 [input]
 
 up={

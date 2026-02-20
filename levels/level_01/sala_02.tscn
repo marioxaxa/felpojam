@@ -1,0 +1,83 @@
+[gd_scene format=3 uid="uid://chh8esr7y3clj"]
+
+[ext_resource type="PackedScene" uid="uid://qg16dkssv2wr" path="res://entities/player/player.tscn" id="1_rdbdr"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fxv8n"]
+albedo_color = Color(0, 0, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7j4su"]
+albedo_color = Color(0, 0, 1, 1)
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_yxtlt"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_vho8h"]
+sky_material = SubResource("ProceduralSkyMaterial_yxtlt")
+
+[sub_resource type="Environment" id="Environment_5fj80"]
+background_mode = 2
+sky = SubResource("Sky_vho8h")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="World" type="Node3D" unique_id=255224488]
+
+[node name="Player" parent="." unique_id=231898161 groups=["player"] instance=ExtResource("1_rdbdr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.297588, 1.3307586, -0.005244255)
+
+[node name="Room" type="Node3D" parent="." unique_id=1918062786]
+transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, 30.4602, 0, -38.789326)
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="Room" unique_id=1341884839]
+transform = Transform3D(49.773, 0, 0, 0, 0.395, 0, 0, 0, 50, 19.964388, 0, 0)
+use_collision = true
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="Room" unique_id=1969244980]
+transform = Transform3D(-3.094542e-08, 0, 49.706856, 0, 2.6807945, 0, -0.7079487, 0, -2.1727558e-06, 19.964388, 1.329135, -24.349495)
+use_collision = true
+material = SubResource("StandardMaterial3D_fxv8n")
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="Room" unique_id=1087738947]
+transform = Transform3D(0.708, 0, 0, 0, 2.681, 0, 0, 0, 23, 44.62327, 1.329135, -12.8945)
+use_collision = true
+material = SubResource("StandardMaterial3D_7j4su")
+
+[node name="CSGBox3D10" type="CSGBox3D" parent="Room" unique_id=652244962]
+transform = Transform3D(0.7079487, 0, 0, 0, 2.6807945, 0, 0, 0, 49.706856, -4.538397, 1.329135, 0)
+use_collision = true
+material = SubResource("StandardMaterial3D_7j4su")
+
+[node name="CSGBox3D11" type="CSGBox3D" parent="Room" unique_id=1943157117]
+transform = Transform3D(-3.094542e-08, 0, 49.706856, 0, 2.6807945, 0, -0.7079487, 0, -2.1727558e-06, 19.964388, 1.329135, 24.098793)
+use_collision = true
+material = SubResource("StandardMaterial3D_7j4su")
+
+[node name="CSGBox3D16" type="CSGBox3D" parent="Room" unique_id=1075699222]
+transform = Transform3D(0.708, 0, 0, 0, 2.681, 0, 0, 0, 23, 44.58609, 1.329, 12.755)
+operation = 1
+use_collision = true
+material = SubResource("StandardMaterial3D_7j4su")
+
+[node name="CSGBox3D15" type="CSGBox3D" parent="Room" unique_id=1357704426]
+transform = Transform3D(-3.0947664e-08, 0, 2.2292562, 0, 2.681, 0, -0.708, 0, -9.744388e-08, 43.145927, 1.3172612, 1.6047554)
+operation = 1
+use_collision = true
+material = SubResource("StandardMaterial3D_7j4su")
+
+[node name="CSGBox3D17" type="CSGBox3D" parent="Room" unique_id=871432147]
+transform = Transform3D(-3.0947664e-08, 0, 2.2292562, 0, 2.681, 0, -0.708, 0, -9.744388e-08, 43.17888, 1.3363506, -1.748603)
+operation = 1
+use_collision = true
+material = SubResource("StandardMaterial3D_7j4su")
+
+[node name="CSGBox3D12" type="CSGBox3D" parent="Room" unique_id=313905578]
+transform = Transform3D(8.8388815, 0, 0, 0, 0.395, 0, 0, 0, 3.0899673, 19.964388, 0, -0.04198587)
+use_collision = true
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=2078723825]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 3.1930068, 3.4638667, -5.5304484)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=64512982]
+environment = SubResource("Environment_5fj80")
